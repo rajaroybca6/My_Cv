@@ -30,7 +30,7 @@ def get_image_base64(image_filename):
         print(f"Error loading image: {e}")
         return None
 
-# --- MODERN GLASSMORPHISM STYLING ---
+# --- ENHANCED STYLING WITH MULTIPLE SIDEBAR FIX METHODS ---
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
@@ -39,27 +39,64 @@ st.markdown("""
         font-family: 'Poppins', sans-serif;
     }
     
-    /* Main Background with Gradient */
+    /* Main Background */
     .stApp {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         background-attachment: fixed;
     }
     
-    /* CRITICAL: Force sidebar toggle to always be visible */
+    /* ===== CRITICAL SIDEBAR TOGGLE FIXES ===== */
+    /* Method 1: Force visibility of collapsed control */
     [data-testid="collapsedControl"] {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
         z-index: 999999 !important;
+        position: fixed !important;
+        top: 0.5rem !important;
+        left: 0.5rem !important;
         background: white !important;
         border-radius: 50% !important;
-        padding: 8px !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+        padding: 10px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+        width: 44px !important;
+        height: 44px !important;
     }
     
     [data-testid="collapsedControl"]:hover {
         transform: scale(1.1) !important;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
+        box-shadow: 0 6px 30px rgba(0,0,0,0.4) !important;
+        background: #f8f9fa !important;
+    }
+    
+    [data-testid="collapsedControl"] svg {
+        color: #667eea !important;
+        width: 24px !important;
+        height: 24px !important;
+    }
+    
+    /* Method 2: Force header buttons to show */
+    button[kind="header"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 999998 !important;
+    }
+    
+    /* Method 3: Ensure sidebar controls are always visible */
+    [data-testid="stSidebarNav"] button,
+    [data-testid="baseButton-header"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Method 4: Force the collapse arrow to always show */
+    .css-1cypcdb {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 999999 !important;
     }
     
     /* Sidebar Styling */
@@ -72,6 +109,13 @@ st.markdown("""
     
     [data-testid="stSidebar"] > div:first-child {
         padding-top: 2rem;
+    }
+    
+    /* When sidebar is collapsed, ensure toggle is visible */
+    [data-testid="stSidebar"][aria-expanded="false"] ~ div [data-testid="collapsedControl"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     /* Glass Card Effect */
@@ -207,6 +251,29 @@ st.markdown("""
         font-weight: 800;
     }
     
+    /* Manual Toggle Button */
+    .manual-toggle {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 999997;
+        background: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .manual-toggle:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+    }
+    
     /* Button Styling */
     .stButton > button {
         width: 100%;
@@ -249,7 +316,6 @@ st.markdown("""
     /* Hide default Streamlit elements */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    header {visibility: hidden;}
     
     /* Contact Info Styling */
     .contact-item {
@@ -320,6 +386,35 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Add JavaScript to force sidebar toggle visibility
+st.markdown("""
+    <script>
+    // Force sidebar toggle button to be visible
+    function ensureSidebarToggle() {
+        // Find all potential toggle buttons
+        const toggles = document.querySelectorAll('[data-testid="collapsedControl"], button[kind="header"]');
+        toggles.forEach(toggle => {
+            if (toggle) {
+                toggle.style.display = 'block';
+                toggle.style.visibility = 'visible';
+                toggle.style.opacity = '1';
+                toggle.style.zIndex = '999999';
+            }
+        });
+    }
+    
+    // Run on load
+    window.addEventListener('load', ensureSidebarToggle);
+    
+    // Run periodically to catch any dynamic changes
+    setInterval(ensureSidebarToggle, 1000);
+    
+    // Also run on any DOM changes
+    const observer = new MutationObserver(ensureSidebarToggle);
+    observer.observe(document.body, { childList: true, subtree: true });
+    </script>
+""", unsafe_allow_html=True)
+
 # --- SIDEBAR ---
 with st.sidebar:
     st.markdown('<div class="profile-container">', unsafe_allow_html=True)
@@ -381,6 +476,17 @@ with st.sidebar:
     
     if st.button("📥 Download CV"):
         st.success("✅ CV download ready!")
+
+# Add instruction box at the top
+st.markdown("""
+    <div style="background: rgba(255, 255, 255, 0.95); padding: 1rem; border-radius: 12px; margin-bottom: 1rem; border-left: 4px solid #667eea;">
+        <strong>💡 Sidebar Toggle Tips:</strong><br>
+        • Look for the <strong>☰</strong> menu icon in the top-left corner<br>
+        • Click it to show/hide the sidebar<br>
+        • On mobile: Swipe from the left edge<br>
+        • Keyboard: Press <strong>[</strong> key to toggle
+    </div>
+""", unsafe_allow_html=True)
 
 # --- HERO SECTION ---
 st.markdown("""
@@ -514,11 +620,11 @@ with tab1:
                     and payment integration. Built with modern web technologies and responsive design.
                 </p>
                 <div>
-                    <span class="skill-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">HTML</span>
-                    <span class="skill-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">CSS</span>
-                    <span class="skill-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">JavaScript</span>
-                    <span class="skill-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">PHP</span>
-                    <span class="skill-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">SQL</span>
+                    <span class="skill-badge">HTML</span>
+                    <span class="skill-badge">CSS</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">PHP</span>
+                    <span class="skill-badge">SQL</span>
                 </div>
             </div>
         """, unsafe_allow_html=True)
@@ -532,10 +638,10 @@ with tab1:
                     and booking capabilities. Optimized for performance and SEO.
                 </p>
                 <div>
-                    <span class="skill-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">PHP</span>
-                    <span class="skill-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Bootstrap</span>
-                    <span class="skill-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">MySQL</span>
-                    <span class="skill-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">JavaScript</span>
+                    <span class="skill-badge">PHP</span>
+                    <span class="skill-badge">Bootstrap</span>
+                    <span class="skill-badge">MySQL</span>
+                    <span class="skill-badge">JavaScript</span>
                 </div>
             </div>
         """, unsafe_allow_html=True)
