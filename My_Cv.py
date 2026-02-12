@@ -16,89 +16,56 @@ def get_image_base64(image_filename):
     try:
         script_dir = os.path.dirname(os.path.abspath(__file__))
         image_path = os.path.join(script_dir, image_filename)
-        
+
         if os.path.exists(image_path):
             with open(image_path, "rb") as img_file:
                 return base64.b64encode(img_file.read()).decode()
-        
+
         if os.path.exists(image_filename):
             with open(image_filename, "rb") as img_file:
                 return base64.b64encode(img_file.read()).decode()
-        
+
         return None
     except Exception as e:
         print(f"Error loading image: {e}")
         return None
 
-# --- ENHANCED STYLING WITH MULTIPLE SIDEBAR FIX METHODS ---
+
+# --- MODERN GLASSMORPHISM STYLING ---
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-    
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    /* Main Background */
+
+    * { font-family: 'Poppins', sans-serif; }
+
+    /* Main Background with Gradient */
     .stApp {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         background-attachment: fixed;
     }
-    
-    /* ===== CRITICAL SIDEBAR TOGGLE FIXES ===== */
-    /* Method 1: Force visibility of collapsed control */
-    [data-testid="collapsedControl"] {
-        display: block !important;
+
+    /* IMPORTANT: Do NOT hide header (sidebar toggle lives there in many versions) */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    /* header {visibility: hidden;}  <-- REMOVED */
+
+    /* Ensure content doesn't overlap the top-left toggle */
+    .block-container {
+        padding-top: 2.5rem !important;
+    }
+
+    /* Sidebar toggle button (works across more versions) */
+    [data-testid="collapsedControl"],
+    [data-testid="stSidebarCollapsedControl"] {
+        display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        z-index: 999999 !important;
-        position: fixed !important;
-        top: 0.5rem !important;
-        left: 0.5rem !important;
-        background: white !important;
-        border-radius: 50% !important;
-        padding: 10px !important;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
-        width: 44px !important;
-        height: 44px !important;
+        z-index: 9999 !important;
+        border-radius: 999px !important;
+        background: rgba(255,255,255,0.95) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
     }
-    
-    [data-testid="collapsedControl"]:hover {
-        transform: scale(1.1) !important;
-        box-shadow: 0 6px 30px rgba(0,0,0,0.4) !important;
-        background: #f8f9fa !important;
-    }
-    
-    [data-testid="collapsedControl"] svg {
-        color: #667eea !important;
-        width: 24px !important;
-        height: 24px !important;
-    }
-    
-    /* Method 2: Force header buttons to show */
-    button[kind="header"] {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 999998 !important;
-    }
-    
-    /* Method 3: Ensure sidebar controls are always visible */
-    [data-testid="stSidebarNav"] button,
-    [data-testid="baseButton-header"] {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* Method 4: Force the collapse arrow to always show */
-    .css-1cypcdb {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 999999 !important;
-    }
-    
+
     /* Sidebar Styling */
     [data-testid="stSidebar"] {
         background: rgba(255, 255, 255, 0.95);
@@ -106,18 +73,11 @@ st.markdown("""
         border-right: 1px solid rgba(255, 255, 255, 0.3);
         box-shadow: 4px 0 24px rgba(0, 0, 0, 0.1);
     }
-    
+
     [data-testid="stSidebar"] > div:first-child {
         padding-top: 2rem;
     }
-    
-    /* When sidebar is collapsed, ensure toggle is visible */
-    [data-testid="stSidebar"][aria-expanded="false"] ~ div [data-testid="collapsedControl"] {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
+
     /* Glass Card Effect */
     .glass-card {
         background: rgba(255, 255, 255, 0.95);
@@ -129,12 +89,12 @@ st.markdown("""
         margin-bottom: 2rem;
         transition: all 0.3s ease;
     }
-    
+
     .glass-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
     }
-    
+
     /* Hero Glass Card */
     .hero-glass {
         background: rgba(255, 255, 255, 0.1);
@@ -146,13 +106,13 @@ st.markdown("""
         margin-bottom: 3rem;
         color: white;
     }
-    
+
     /* Profile Image */
     .profile-container {
         text-align: center;
         margin-bottom: 2rem;
     }
-    
+
     .profile-img {
         border-radius: 50%;
         width: 200px;
@@ -164,12 +124,12 @@ st.markdown("""
         display: block;
         transition: all 0.3s ease;
     }
-    
+
     .profile-img:hover {
         transform: scale(1.05);
         box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
     }
-    
+
     /* Skill Badge */
     .skill-badge {
         display: inline-block;
@@ -183,12 +143,12 @@ st.markdown("""
         box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         transition: all 0.3s ease;
     }
-    
+
     .skill-badge:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
     }
-    
+
     /* Stat Box */
     .stat-box {
         background: rgba(255, 255, 255, 0.95);
@@ -200,12 +160,12 @@ st.markdown("""
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
     }
-    
+
     .stat-box:hover {
         transform: translateY(-5px);
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
     }
-    
+
     .stat-number {
         font-size: 3rem;
         font-weight: 900;
@@ -216,14 +176,14 @@ st.markdown("""
         line-height: 1;
         margin-bottom: 0.5rem;
     }
-    
+
     .stat-label {
         font-size: 0.85rem;
         color: #6B7280;
         font-weight: 600;
         letter-spacing: 0.05em;
     }
-    
+
     /* Experience Timeline */
     .timeline-card {
         background: rgba(255, 255, 255, 0.95);
@@ -235,13 +195,13 @@ st.markdown("""
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         transition: all 0.3s ease;
     }
-    
+
     .timeline-card:hover {
         transform: translateX(8px);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         border-left-color: #764ba2;
     }
-    
+
     /* Gradient Text */
     .gradient-text {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -250,30 +210,7 @@ st.markdown("""
         background-clip: text;
         font-weight: 800;
     }
-    
-    /* Manual Toggle Button */
-    .manual-toggle {
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        z-index: 999997;
-        background: white;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    
-    .manual-toggle:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 30px rgba(0,0,0,0.4);
-    }
-    
+
     /* Button Styling */
     .stButton > button {
         width: 100%;
@@ -286,12 +223,12 @@ st.markdown("""
         box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         transition: all 0.3s ease;
     }
-    
+
     .stButton > button:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
     }
-    
+
     /* Tab Styling */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
@@ -300,23 +237,19 @@ st.markdown("""
         border-radius: 16px;
         padding: 8px;
     }
-    
+
     .stTabs [data-baseweb="tab"] {
         border-radius: 12px;
         color: #6B7280;
         font-weight: 600;
         padding: 12px 24px;
     }
-    
+
     .stTabs [aria-selected="true"] {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
     }
-    
-    /* Hide default Streamlit elements */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    
+
     /* Contact Info Styling */
     .contact-item {
         padding: 0.75rem;
@@ -326,17 +259,12 @@ st.markdown("""
         border-left: 3px solid #667eea;
         transition: all 0.3s ease;
     }
-    
+
     .contact-item:hover {
         background: rgba(102, 126, 234, 0.2);
         transform: translateX(5px);
     }
-    
-    /* Section Headers */
-    h1, h2, h3 {
-        font-weight: 800;
-    }
-    
+
     /* Project Card */
     .project-card {
         background: rgba(255, 255, 255, 0.95);
@@ -348,77 +276,46 @@ st.markdown("""
         height: 100%;
         transition: all 0.3s ease;
     }
-    
+
     .project-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
     }
-    
+
     /* Featured Project */
     .featured-project {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         border: none;
     }
-    
+
     .featured-project:hover {
         transform: scale(1.02);
     }
-    
+
     /* Scrollbar */
-    ::-webkit-scrollbar {
-        width: 10px;
-        height: 10px;
-    }
-    
-    ::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
-    }
-    
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.1); }
     ::-webkit-scrollbar-thumb {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 10px;
     }
-    
     ::-webkit-scrollbar-thumb:hover {
         background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    }
+
+    @media (max-width: 768px) {
+        .hero-glass { padding: 2rem !important; }
+        .profile-img { width: 140px; height: 140px; }
     }
     </style>
 """, unsafe_allow_html=True)
 
-# Add JavaScript to force sidebar toggle visibility
-st.markdown("""
-    <script>
-    // Force sidebar toggle button to be visible
-    function ensureSidebarToggle() {
-        // Find all potential toggle buttons
-        const toggles = document.querySelectorAll('[data-testid="collapsedControl"], button[kind="header"]');
-        toggles.forEach(toggle => {
-            if (toggle) {
-                toggle.style.display = 'block';
-                toggle.style.visibility = 'visible';
-                toggle.style.opacity = '1';
-                toggle.style.zIndex = '999999';
-            }
-        });
-    }
-    
-    // Run on load
-    window.addEventListener('load', ensureSidebarToggle);
-    
-    // Run periodically to catch any dynamic changes
-    setInterval(ensureSidebarToggle, 1000);
-    
-    // Also run on any DOM changes
-    const observer = new MutationObserver(ensureSidebarToggle);
-    observer.observe(document.body, { childList: true, subtree: true });
-    </script>
-""", unsafe_allow_html=True)
 
 # --- SIDEBAR ---
 with st.sidebar:
     st.markdown('<div class="profile-container">', unsafe_allow_html=True)
-    
+
     img_base64 = get_image_base64("profile_photo.png")
     if img_base64:
         st.markdown(
@@ -427,13 +324,13 @@ with st.sidebar:
         )
     else:
         st.info("📸 Add 'profile_photo.png' for your profile picture")
-    
+
     st.markdown("<h2 style='text-align: center; margin: 1rem 0 0.5rem 0;' class='gradient-text'>RAJA ROY</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #6B7280; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.1em;'>AI ENGINEER & DATA SCIENTIST</p>", unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
-    
+
     st.markdown("---")
-    
+
     st.markdown("### 📬 Contact")
     st.markdown("""
         <div class="contact-item">
@@ -449,9 +346,9 @@ with st.sidebar:
             Torino, Italy
         </div>
     """, unsafe_allow_html=True)
-    
+
     st.markdown("---")
-    
+
     st.markdown("### 🌍 Languages")
     st.markdown("""
         <div style="padding: 0.5rem;">
@@ -460,9 +357,9 @@ with st.sidebar:
             🇮🇳 <strong>Hindi</strong> - Native
         </div>
     """, unsafe_allow_html=True)
-    
+
     st.markdown("---")
-    
+
     st.markdown("### 🎓 Current Study")
     st.markdown("""
         <div style="padding: 0.5rem; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 3px solid #667eea;">
@@ -471,22 +368,12 @@ with st.sidebar:
             <small>Oct 2025 - Present</small>
         </div>
     """, unsafe_allow_html=True)
-    
+
     st.markdown("---")
-    
+
     if st.button("📥 Download CV"):
         st.success("✅ CV download ready!")
 
-# Add instruction box at the top
-st.markdown("""
-    <div style="background: rgba(255, 255, 255, 0.95); padding: 1rem; border-radius: 12px; margin-bottom: 1rem; border-left: 4px solid #667eea;">
-        <strong>💡 Sidebar Toggle Tips:</strong><br>
-        • Look for the <strong>☰</strong> menu icon in the top-left corner<br>
-        • Click it to show/hide the sidebar<br>
-        • On mobile: Swipe from the left edge<br>
-        • Keyboard: Press <strong>[</strong> key to toggle
-    </div>
-""", unsafe_allow_html=True)
 
 # --- HERO SECTION ---
 st.markdown("""
@@ -497,8 +384,8 @@ st.markdown("""
             <span style="color: #fff; text-shadow: 0 0 30px rgba(255,255,255,0.5);">Data Solutions</span>
         </h1>
         <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 2.5rem; line-height: 1.7; opacity: 0.95;">
-            Transforming complex data into actionable insights with 8+ years of expertise in analytics, 
-            machine learning, and full-stack development. Specialized in creating production-grade 
+            Transforming complex data into actionable insights with 8+ years of expertise in analytics,
+            machine learning, and full-stack development. Specialized in creating production-grade
             AI-enabled solutions that drive measurable business value.
         </p>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -511,41 +398,19 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
+
 # --- STATS ---
 st.markdown("## 📊 Professional Impact")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.markdown("""
-        <div class="stat-box">
-            <div class="stat-number">8+</div>
-            <div class="stat-label">YEARS EXPERIENCE</div>
-        </div>
-    """, unsafe_allow_html=True)
-
+    st.markdown("""<div class="stat-box"><div class="stat-number">8+</div><div class="stat-label">YEARS EXPERIENCE</div></div>""", unsafe_allow_html=True)
 with col2:
-    st.markdown("""
-        <div class="stat-box">
-            <div class="stat-number">5</div>
-            <div class="stat-label">COMPANIES</div>
-        </div>
-    """, unsafe_allow_html=True)
-
+    st.markdown("""<div class="stat-box"><div class="stat-number">5</div><div class="stat-label">COMPANIES</div></div>""", unsafe_allow_html=True)
 with col3:
-    st.markdown("""
-        <div class="stat-box">
-            <div class="stat-number">15+</div>
-            <div class="stat-label">TECH SKILLS</div>
-        </div>
-    """, unsafe_allow_html=True)
-
+    st.markdown("""<div class="stat-box"><div class="stat-number">15+</div><div class="stat-label">TECH SKILLS</div></div>""", unsafe_allow_html=True)
 with col4:
-    st.markdown("""
-        <div class="stat-box">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">DEDICATION</div>
-        </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="stat-box"><div class="stat-number">100%</div><div class="stat-label">DEDICATION</div></div>""", unsafe_allow_html=True)
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
@@ -554,18 +419,17 @@ tab1, tab2, tab3, tab4 = st.tabs(["🚀 Projects", "💼 Experience", "🎓 Educ
 
 with tab1:
     st.markdown("## Featured Projects")
-    
-    col1, col2 = st.columns([2, 1])
-    
-    with col1:
+    colA, colB = st.columns([2, 1])
+
+    with colA:
         st.markdown("""
             <div class="featured-project project-card">
                 <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
                 <h3 style="margin-bottom: 1rem;">Fraud Detection & Supply Chain Analytics</h3>
                 <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
-                    Designed and implemented machine learning models to detect fraudulent transactions and predict 
-                    on-time versus delayed shipments. Leveraged data preprocessing, feature engineering, and 
-                    classification techniques (Random Forest, Logistic Regression, XGBoost) to support operational 
+                    Designed and implemented machine learning models to detect fraudulent transactions and predict
+                    on-time versus delayed shipments. Leveraged data preprocessing, feature engineering, and
+                    classification techniques (Random Forest, Logistic Regression, XGBoost) to support operational
                     decision-making with 90%+ accuracy.
                 </p>
                 <div style="margin-bottom: 1.5rem;">
@@ -578,7 +442,6 @@ with tab1:
                         text-decoration: none;
                         font-weight: 700;
                         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-                        transition: all 0.3s ease;
                     ">
                         🚀 View Live Demo →
                     </a>
@@ -591,8 +454,8 @@ with tab1:
                 </div>
             </div>
         """, unsafe_allow_html=True)
-    
-    with col2:
+
+    with colB:
         st.markdown("""
             <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
                 <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
@@ -605,18 +468,17 @@ with tab1:
                 </p>
             </div>
         """, unsafe_allow_html=True)
-    
+
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("## Web Development Projects")
-    
+
     col1, col2 = st.columns(2)
-    
     with col1:
         st.markdown("""
             <div class="project-card">
                 <h4 style="margin-bottom: 1rem;">🛒 Amazon Clone (E-Commerce)</h4>
                 <p style="color: #6B7280; line-height: 1.7; margin-bottom: 1.5rem;">
-                    Full-stack e-commerce platform with user authentication, shopping cart functionality, 
+                    Full-stack e-commerce platform with user authentication, shopping cart functionality,
                     and payment integration. Built with modern web technologies and responsive design.
                 </p>
                 <div>
@@ -628,13 +490,13 @@ with tab1:
                 </div>
             </div>
         """, unsafe_allow_html=True)
-    
+
     with col2:
         st.markdown("""
             <div class="project-card">
                 <h4 style="margin-bottom: 1rem;">🏔️ West Bengal Tourism Portal</h4>
                 <p style="color: #6B7280; line-height: 1.7; margin-bottom: 1.5rem;">
-                    Informational tourism website featuring regional attractions, interactive maps, 
+                    Informational tourism website featuring regional attractions, interactive maps,
                     and booking capabilities. Optimized for performance and SEO.
                 </p>
                 <div>
@@ -648,7 +510,6 @@ with tab1:
 
 with tab2:
     st.markdown("## Professional Experience")
-    
     experiences = [
         {
             "company": "Elwood",
@@ -683,7 +544,7 @@ with tab2:
             "skills": ["Data Analysis", "SQL", "Excel", "Reporting"]
         }
     ]
-    
+
     for exp in experiences:
         st.markdown(f"""
             <div class="timeline-card">
@@ -708,10 +569,8 @@ with tab2:
 
 with tab3:
     col1, col2 = st.columns(2)
-    
     with col1:
         st.markdown("## 🎓 Education")
-        
         st.markdown("""
             <div class="timeline-card">
                 <h4 style="margin: 0;" class="gradient-text">Professional Master's in AI (AI Specialist)</h4>
@@ -719,7 +578,7 @@ with tab3:
                 <p style="color: #6B7280; font-size: 0.9rem;">📍 Torino, Italy | 🗓️ Oct 2025 - Present</p>
             </div>
         """, unsafe_allow_html=True)
-        
+
         st.markdown("""
             <div class="timeline-card">
                 <h4 style="margin: 0;" class="gradient-text">Web Development Specialization</h4>
@@ -730,7 +589,7 @@ with tab3:
                 </p>
             </div>
         """, unsafe_allow_html=True)
-        
+
         st.markdown("""
             <div class="timeline-card">
                 <h4 style="margin: 0;" class="gradient-text">Bachelor of Computer Application</h4>
@@ -741,10 +600,9 @@ with tab3:
                 </p>
             </div>
         """, unsafe_allow_html=True)
-    
+
     with col2:
         st.markdown("## 💻 Technical Skills")
-        
         skills_data = {
             "Data Science & AI": ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "Feature Engineering"],
             "Data Analytics": ["SQL", "Power BI", "Excel (Advanced)", "Data Visualization", "Statistical Analysis"],
@@ -753,7 +611,7 @@ with tab3:
             "Tools & DevOps": ["Git", "Apache", "Streamlit", "VS Code", "Linux"],
             "Soft Skills": ["Problem Solving", "Team Collaboration", "Project Management", "Analytical Thinking"]
         }
-        
+
         for category, skills in skills_data.items():
             st.markdown(f"""
                 <div class="glass-card" style="margin-bottom: 1.5rem;">
@@ -766,43 +624,41 @@ with tab3:
 
 with tab4:
     st.markdown("## 👋 About Me")
-    
     st.markdown("""
         <div class="glass-card">
             <p style="color: #4B5563; font-size: 1.05rem; line-height: 1.8;">
-                I am a <strong class="gradient-text">Senior Data Analyst and Full-Stack Web Developer</strong> with over 8+ years of hands-on experience 
-                delivering production-grade analytics platforms and ML/AI-enabled solutions. I have deep expertise in 
-                <strong>Python, SQL, PHP, Power BI, Excel, and JavaScript</strong>, with a strong background in data modeling, 
+                I am a <strong class="gradient-text">Senior Data Analyst and Full-Stack Web Developer</strong> with over 8+ years of hands-on experience
+                delivering production-grade analytics platforms and ML/AI-enabled solutions. I have deep expertise in
+                <strong>Python, SQL, PHP, Power BI, Excel, and JavaScript</strong>, with a strong background in data modeling,
                 feature engineering, dashboarding, and automation.
             </p>
             <p style="color: #4B5563; font-size: 1.05rem; line-height: 1.8; margin-top: 1.5rem;">
-                Throughout my career, I have proven my ability to translate business requirements into scalable data products 
+                Throughout my career, I have proven my ability to translate business requirements into scalable data products
                 and intelligent web applications, leading projects end-to-end from architecture to deployment.
             </p>
             <p style="color: #4B5563; font-size: 1.05rem; line-height: 1.8; margin-top: 1.5rem;">
-                Currently pursuing a <strong class="gradient-text">Professional Master's Program in Artificial Intelligence</strong>, 
+                Currently pursuing a <strong class="gradient-text">Professional Master's Program in Artificial Intelligence</strong>,
                 strengthening my expertise in machine learning, feature engineering, and applied AI systems.
             </p>
         </div>
     """, unsafe_allow_html=True)
-    
+
     st.markdown("## 🎯 Career Goals & Interests")
-    
     col1, col2 = st.columns(2)
-    
+
     with col1:
         st.markdown("""
             <div class="featured-project project-card">
                 <h4 style="margin-bottom: 1.5rem;">Current Focus</h4>
                 <p style="line-height: 1.8; opacity: 0.95;">
-                    Actively pursuing roles in <strong>AI Engineering, Data Science,</strong> and 
-                    <strong>Machine Learning Engineering</strong> where I can leverage my unique combination of 
-                    analytics expertise and full-stack development skills to build intelligent, 
+                    Actively pursuing roles in <strong>AI Engineering, Data Science,</strong> and
+                    <strong>Machine Learning Engineering</strong> where I can leverage my unique combination of
+                    analytics expertise and full-stack development skills to build intelligent,
                     production-ready solutions.
                 </p>
             </div>
         """, unsafe_allow_html=True)
-    
+
     with col2:
         st.markdown("""
             <div class="glass-card">
