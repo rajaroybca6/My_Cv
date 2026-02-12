@@ -705,7 +705,7 @@ with tab3:
         st.markdown("## 💻 Technical Skills")
 
         skills_data = {
-            "Data Science & AI": ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "Feature Engineering", "Deep Learning","LLM"],
+            "Data Science & AI": ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "Feature Engineering", "Deep Learning","LLM", "N8N"],
             "Data Analytics": ["SQL", "Power BI", "Excel (Advanced)", "Data Visualization", "Statistical Analysis"],
             "Web Development": ["PHP", "JavaScript", "HTML/CSS", "Bootstrap", "WordPress", "Django"],
             "Databases": ["MySQL", "SQL Server", "Database Design"],
