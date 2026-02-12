@@ -184,7 +184,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("### 🌍 Languages")
-    st.caption("**English** - Fluent")
+    st.caption("**English** - Native")
     st.caption("**Italian** - B2")
     st.caption("**Hindi** - Native")
 
