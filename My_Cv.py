@@ -15,7 +15,7 @@ st.set_page_config(
 # ---------------------------
 # HELPERS
 # ---------------------------
-def get_file_bytes(filename: str) -> bytes | None:
+def get_file_bytes(filename: str):
     """Read file bytes from app directory (or relative path)."""
     try:
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -34,7 +34,7 @@ def get_file_bytes(filename: str) -> bytes | None:
         return None
 
 
-def get_image_base64(image_filename: str) -> str | None:
+def get_image_base64(image_filename: str):
     """Convert image to base64 for embedding."""
     data = get_file_bytes(image_filename)
     if not data:
@@ -43,31 +43,29 @@ def get_image_base64(image_filename: str) -> str | None:
 
 
 # ---------------------------
-# THEME TOGGLE (Light/Dark)
+# THEME STATE
 # ---------------------------
 if "theme" not in st.session_state:
     st.session_state.theme = "light"
 
+# ---------------------------
+# SIDEBAR THEME TOGGLE (top)
+# ---------------------------
 with st.sidebar:
     st.markdown("### 🎨 Theme")
     theme_choice = st.radio(
-        "Select theme",
+        "Theme",
         ["Light", "Dark"],
         index=0 if st.session_state.theme == "light" else 1,
         label_visibility="collapsed"
     )
     st.session_state.theme = "light" if theme_choice == "Light" else "dark"
 
-
-# ---------------------------
-# CSS (Variables for Light/Dark + Sidebar Width + Mobile Fixes)
-# ---------------------------
-# You can tweak these widths:
-# Desktop sidebar width: 300px
-# Mobile sidebar width: 260px
-
 theme = st.session_state.theme
 
+# ---------------------------
+# CSS (Light/Dark + Narrow Sidebar + Mobile Fixes)
+# ---------------------------
 st.markdown(f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
@@ -116,7 +114,7 @@ st.markdown(f"""
   background-attachment: fixed;
 }}
 
-/* Give space so header toggle isn't overlapped */
+/* Space for header/sidebar toggle */
 .block-container {{
   padding-top: 2.5rem !important;
 }}
@@ -143,7 +141,6 @@ footer {{visibility: hidden;}}
 /* ---------------------------
    SIDEBAR WIDTH (NARROW)
 --------------------------- */
-/* Sidebar container */
 [data-testid="stSidebar"] {{
   background: var(--panel);
   backdrop-filter: blur(10px);
@@ -151,7 +148,6 @@ footer {{visibility: hidden;}}
   box-shadow: 4px 0 24px rgba(0,0,0,0.10);
   width: 300px !important;
 }}
-/* Inner sidebar */
 [data-testid="stSidebar"] > div:first-child {{
   padding-top: 1.25rem;
   width: 300px !important;
@@ -171,7 +167,6 @@ footer {{visibility: hidden;}}
   transition: all 0.3s ease;
   color: var(--text);
 }}
-
 .glass-card:hover {{
   transform: translateY(-8px);
   box-shadow: var(--shadow2);
@@ -192,7 +187,6 @@ footer {{visibility: hidden;}}
   text-align: center;
   margin-bottom: 1.25rem;
 }}
-
 .profile-img {{
   border-radius: 50%;
   width: 170px;
@@ -204,7 +198,6 @@ footer {{visibility: hidden;}}
   display: block;
   transition: all 0.3s ease;
 }}
-
 .profile-img:hover {{
   transform: scale(1.05);
 }}
@@ -239,7 +232,6 @@ footer {{visibility: hidden;}}
 .stat-box:hover {{
   transform: translateY(-5px);
 }}
-
 .stat-number {{
   font-size: 3rem;
   font-weight: 900;
@@ -456,9 +448,9 @@ with st.sidebar:
     st.markdown("---")
 
     # ---------------------------
-    # REAL CV DOWNLOAD
+    # REAL CV DOWNLOAD (Put PDF in same folder)
     # ---------------------------
-    cv_filename = "Raja_Roy_CV.pdf"  # put this file in same folder as app.py
+    cv_filename = "Raja_Roy_CV.pdf"
     cv_bytes = get_file_bytes(cv_filename)
 
     if cv_bytes:
@@ -517,25 +509,275 @@ st.markdown("<br><br>", unsafe_allow_html=True)
 
 # ---------------------------
 # TABS
-# (Your same content, shortened here — you can paste your existing tab content below)
 # ---------------------------
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Projects", "💼 Experience", "🎓 Education & Skills", "👤 About Me"])
 
 with tab1:
     st.markdown("## Featured Projects")
-    st.info("✅ Paste your existing Projects code here (same as before).")
+
+    colA, colB = st.columns([2, 1])
+
+    with colA:
+        st.markdown("""
+            <div class="featured-project project-card">
+                <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
+                <h3 style="margin-bottom: 1rem;">Fraud Detection & Supply Chain Analytics</h3>
+                <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
+                    Designed and implemented machine learning models to detect fraudulent transactions and predict
+                    on-time versus delayed shipments. Leveraged data preprocessing, feature engineering, and
+                    classification techniques (Random Forest, Logistic Regression, XGBoost) to support operational
+                    decision-making with 90%+ accuracy.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <a href="https://logisticmanagement.streamlit.app/" target="_blank" style="
+                        display: inline-block;
+                        background: white;
+                        color: #667eea;
+                        padding: 12px 24px;
+                        border-radius: 12px;
+                        text-decoration: none;
+                        font-weight: 700;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                    ">
+                        🚀 View Live Demo →
+                    </a>
+                </div>
+                <div>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Scikit-learn</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Pandas</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Feature Engineering</span>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+
+    with colB:
+        st.markdown("""
+            <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
+                <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
+                <p style="line-height: 1.8;">
+                    ✓ Built classification models<br>
+                    ✓ Data preprocessing & cleaning<br>
+                    ✓ Feature engineering pipeline<br>
+                    ✓ Model evaluation & tuning<br>
+                    ✓ Business-ready insights
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("## Web Development Projects")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("""
+            <div class="project-card">
+                <h4 style="margin-bottom: 1rem;">🛒 Amazon Clone (E-Commerce)</h4>
+                <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem;">
+                    Full-stack e-commerce platform with user authentication, shopping cart functionality,
+                    and payment integration. Built with modern web technologies and responsive design.
+                </p>
+                <div>
+                    <span class="skill-badge">HTML</span>
+                    <span class="skill-badge">CSS</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">PHP</span>
+                    <span class="skill-badge">SQL</span>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+
+    with col2:
+        st.markdown("""
+            <div class="project-card">
+                <h4 style="margin-bottom: 1rem;">🏔️ West Bengal Tourism Portal</h4>
+                <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem;">
+                    Informational tourism website featuring regional attractions, interactive maps,
+                    and booking capabilities. Optimized for performance and SEO.
+                </p>
+                <div>
+                    <span class="skill-badge">PHP</span>
+                    <span class="skill-badge">Bootstrap</span>
+                    <span class="skill-badge">MySQL</span>
+                    <span class="skill-badge">JavaScript</span>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
 
 with tab2:
     st.markdown("## Professional Experience")
-    st.info("✅ Paste your existing Experience code here (same as before).")
+
+    experiences = [
+        {
+            "company": "Elwood",
+            "location": "Torino, Italy",
+            "role": "Web Developer",
+            "period": "Jun 2025 - Oct 2025",
+            "description": "Developed and maintained full-stack web applications, customized WordPress themes and plugins, built responsive websites using PHP, HTML, CSS, Bootstrap, and JavaScript. Collaborated with designers and clients to deliver high-quality digital solutions.",
+            "skills": ["PHP", "WordPress", "JavaScript", "HTML/CSS", "Bootstrap"]
+        },
+        {
+            "company": "NETWAY INDIA PVT. LTD",
+            "location": "New Delhi, India",
+            "role": "Data Analytics & Business Intelligence",
+            "period": "May 2019 - May 2023",
+            "description": "Conducted data cleaning, mining, and analysis. Developed interactive dashboards and automated reports using Power BI, Python, SQL, and Excel to enable data-driven business decisions. Led end-to-end analytics projects from requirements gathering to deployment.",
+            "skills": ["Python", "SQL", "Power BI", "Excel", "Data Analysis"]
+        },
+        {
+            "company": "Global Digital Baba",
+            "location": "Torino, Italy",
+            "role": "Customer Support & Store Operations",
+            "period": "Apr 2024 - Jan 2025",
+            "description": "Assisted customers with product selection, troubleshooting, and after-sales support while managing billing, merchandising, and stock control.",
+            "skills": ["Customer Service", "Operations", "Inventory Management"]
+        },
+        {
+            "company": "AUTHENZA MEDIA INFOTECH PVT. LTD",
+            "location": "Kolkata, India",
+            "role": "Data Analyst",
+            "period": "Sep 2016 - Feb 2019",
+            "description": "Performed data analysis, visualization, and reporting for business operations while ensuring data integrity and developing dashboards to support management insights.",
+            "skills": ["Data Analysis", "SQL", "Excel", "Reporting"]
+        }
+    ]
+
+    for exp in experiences:
+        st.markdown(f"""
+            <div class="timeline-card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <div>
+                        <h4 style="margin: 0;" class="gradient-text">{exp['role']}</h4>
+                        <p style="margin: 0.5rem 0; font-weight: 700; font-size: 1rem; color: var(--accent1);">{exp['company']}</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-weight: 600; font-size: 0.9rem; color: var(--muted);">{exp['period']}</p>
+                        <p style="margin: 0.25rem 0; font-size: 0.85rem; color: var(--muted);">📍 {exp['location']}</p>
+                    </div>
+                </div>
+                <p style="color: var(--text); line-height: 1.7; margin: 1rem 0;">
+                    {exp['description']}
+                </p>
+                <div>
+                    {''.join([f'<span class="skill-badge">{skill}</span>' for skill in exp['skills']])}
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
 
 with tab3:
-    st.markdown("## Education & Skills")
-    st.info("✅ Paste your existing Education/Skills code here (same as before).")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("## 🎓 Education")
+
+        st.markdown("""
+            <div class="timeline-card">
+                <h4 style="margin: 0;" class="gradient-text">Professional Master's in AI (AI Specialist)</h4>
+                <p style="margin: 0.75rem 0; font-weight: 700; color: var(--accent1);">INFOR ELEA Smart Business Academy</p>
+                <p style="color: var(--muted); font-size: 0.9rem;">📍 Torino, Italy | 🗓️ Oct 2025 - Present</p>
+            </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("""
+            <div class="timeline-card">
+                <h4 style="margin: 0;" class="gradient-text">Web Development Specialization</h4>
+                <p style="margin: 0.75rem 0; font-weight: 700; color: var(--accent1);">Forte Chance ETS</p>
+                <p style="color: var(--muted); font-size: 0.9rem;">📍 Torino, Italy | 🗓️ Feb 2025 - Aug 2025 | Grade: A</p>
+                <p style="color: var(--text); font-size: 0.9rem; margin-top: 1rem; line-height: 1.6;">
+                    PHP, HTML, CSS, Bootstrap, JavaScript, WordPress, SQL, Apache, Cyber Security, Prompt Engineering
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("""
+            <div class="timeline-card">
+                <h4 style="margin: 0;" class="gradient-text">Bachelor of Computer Application</h4>
+                <p style="margin: 0.75rem 0; font-weight: 700; color: var(--accent1);">IGNOU (Indira Gandhi National Open University)</p>
+                <p style="color: var(--muted); font-size: 0.9rem;">📍 New Delhi, India | 🗓️ 2012 - 2015 | Grade: B</p>
+                <p style="color: var(--text); font-size: 0.9rem; margin-top: 1rem; line-height: 1.6;">
+                    Information Technology, Data Structures, DBMS, System Analysis, Computer Networks, Programming
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+    with col2:
+        st.markdown("## 💻 Technical Skills")
+
+        skills_data = {
+            "Data Science & AI": ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "Feature Engineering"],
+            "Data Analytics": ["SQL", "Power BI", "Excel (Advanced)", "Data Visualization", "Statistical Analysis"],
+            "Web Development": ["PHP", "JavaScript", "HTML/CSS", "Bootstrap", "WordPress", "Django"],
+            "Databases": ["MySQL", "SQL Server", "Database Design"],
+            "Tools & DevOps": ["Git", "Apache", "Streamlit", "VS Code", "Linux"],
+            "Soft Skills": ["Problem Solving", "Team Collaboration", "Project Management", "Analytical Thinking"]
+        }
+
+        for category, skills in skills_data.items():
+            st.markdown(f"""
+                <div class="glass-card" style="margin-bottom: 1.5rem;">
+                    <h5 class="gradient-text" style="margin-bottom: 1rem;">{category}</h5>
+                    <div>
+                        {''.join([f'<span class="skill-badge">{skill}</span>' for skill in skills])}
+                    </div>
+                </div>
+            """, unsafe_allow_html=True)
 
 with tab4:
-    st.markdown("## About Me")
-    st.info("✅ Paste your existing About Me code here (same as before).")
+    st.markdown("## 👋 About Me")
+
+    st.markdown("""
+        <div class="glass-card">
+            <p style="color: var(--text); font-size: 1.05rem; line-height: 1.8;">
+                I am a <strong class="gradient-text">Senior Data Analyst and Full-Stack Web Developer</strong> with over 8+ years of hands-on experience
+                delivering production-grade analytics platforms and ML/AI-enabled solutions. I have deep expertise in
+                <strong>Python, SQL, PHP, Power BI, Excel, and JavaScript</strong>, with a strong background in data modeling,
+                feature engineering, dashboarding, and automation.
+            </p>
+            <p style="color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-top: 1.5rem;">
+                Throughout my career, I have proven my ability to translate business requirements into scalable data products
+                and intelligent web applications, leading projects end-to-end from architecture to deployment.
+            </p>
+            <p style="color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-top: 1.5rem;">
+                Currently pursuing a <strong class="gradient-text">Professional Master's Program in Artificial Intelligence</strong>,
+                strengthening my expertise in machine learning, feature engineering, and applied AI systems.
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("## 🎯 Career Goals & Interests")
+
+    colA, colB = st.columns(2)
+
+    with colA:
+        st.markdown("""
+            <div class="featured-project project-card">
+                <h4 style="margin-bottom: 1.5rem;">Current Focus</h4>
+                <p style="line-height: 1.8; opacity: 0.95;">
+                    Actively pursuing roles in <strong>AI Engineering, Data Science,</strong> and
+                    <strong>Machine Learning Engineering</strong> where I can leverage my unique combination of
+                    analytics expertise and full-stack development skills to build intelligent,
+                    production-ready solutions.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+    with colB:
+        st.markdown("""
+            <div class="glass-card">
+                <h4 style="margin-bottom: 1.5rem;">Interests & Hobbies</h4>
+                <p style="color: var(--text); line-height: 1.8;">
+                    📚 <strong>Reading & Self-Learning</strong><br>
+                    Technology, Business, Personal Development<br><br>
+                    🤖 <strong>AI & ML Research</strong><br>
+                    Staying updated with latest trends<br><br>
+                    💻 <strong>Coding Projects</strong><br>
+                    Building practical solutions<br><br>
+                    🌍 <strong>Languages</strong><br>
+                    Learning Italian (currently B2 level)
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
 
 # ---------------------------
 # FOOTER
