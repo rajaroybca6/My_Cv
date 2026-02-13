@@ -693,7 +693,7 @@ with tab3:
 
         st.markdown("""
             <div class="timeline-card">
-                <h4 style="margin: 0;" class="gradient-text">Bachelor of Computer Application</h4>
+                <h4 style="margin: 0;" class="gradient-text">Bachelor of Computer Applications (BCA)</h4>
                 <p style="margin: 0.75rem 0; font-weight: 700; color: var(--accent1);">IGNOU (Indira Gandhi National Open University)</p>
                 <p style="color: var(--muted); font-size: 0.9rem;">📍 New Delhi, India | 🗓️ 2012 - 2015 | Grade: B</p>
                 <p style="color: var(--text); font-size: 0.9rem; margin-top: 1rem; line-height: 1.6;">
