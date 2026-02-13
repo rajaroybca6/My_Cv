@@ -618,14 +618,7 @@ with tab2:
             "description": "Developed and maintained full-stack web applications, customized WordPress themes and plugins, built responsive websites using PHP, HTML, CSS, Bootstrap, and JavaScript. Collaborated with designers and clients to deliver high-quality digital solutions.",
             "skills": ["PHP", "WordPress", "JavaScript", "HTML/CSS", "Bootstrap"]
         },
-        {
-            "company": "NETWAY INDIA PVT. LTD",
-            "location": "New Delhi, India",
-            "role": "Data Analytics & Business Intelligence",
-            "period": "May 2019 - May 2023",
-            "description": "Conducted data cleaning, mining, and analysis. Developed interactive dashboards and automated reports using Power BI, Python, SQL, and Excel to enable data-driven business decisions. Led end-to-end analytics projects from requirements gathering to deployment.",
-            "skills": ["Python", "SQL", "Power BI", "Excel", "Data Analysis"]
-        },
+       
         {
             "company": "Global Digital Baba",
             "location": "Torino, Italy",
@@ -633,6 +626,15 @@ with tab2:
             "period": "Apr 2024 - Jan 2025",
             "description": "Assisted customers with product selection, troubleshooting, and after-sales support while managing billing, merchandising, and stock control.",
             "skills": ["Customer Service", "Operations", "Inventory Management"]
+        },
+
+        {
+            "company": "NETWAY INDIA PVT. LTD",
+            "location": "New Delhi, India",
+            "role": "Data Analytics & Business Intelligence",
+            "period": "May 2019 - May 2023",
+            "description": "Conducted data cleaning, mining, and analysis. Developed interactive dashboards and automated reports using Power BI, Python, SQL, and Excel to enable data-driven business decisions. Led end-to-end analytics projects from requirements gathering to deployment.",
+            "skills": ["Python", "SQL", "Power BI", "Excel", "Data Analysis"]
         },
         {
             "company": "AUTHENZA MEDIA INFOTECH PVT. LTD",
