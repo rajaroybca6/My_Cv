@@ -697,12 +697,12 @@ with tab3:
                 <p style="margin: 0.75rem 0; font-weight: 700; color: var(--accent1);">IGNOU (Indira Gandhi National Open University)</p>
                 <p style="color: var(--muted); font-size: 0.9rem;">📍 New Delhi, India | 🗓️ 2012 - 2015 | Grade: B</p>
                 <p style="color: var(--text); font-size: 0.9rem; margin-top: 1rem; line-height: 1.6;">
-                    Foundation Course in English for Computing ,Computer Fundamentals and PC Software, PC Software Application Skills,
+                    Foundation Course in English for Computing, Computer Fundamentals and PC Software, PC Software Application Skills,
                     Foundation Course in Mathematics and Computing, C Programming & Data Structure, Introduction to System Software, Elements
                     of System Analysis and Design, Introduction to DBMS, Introduction to Computer Organization, Window Programming, Multimedia,
                     Computer Networks, TCP/IP Programming, Introduction to Software Engineering, Computer Oriented Numerical Techniques, C++
                     and Object Oriented Programming, Theory of Computer Science, Introduction to Internet Programming Java, Intranet
-                    Administration, SQL, HTML,CSS, Project
+                    Administration, SQL, HTML,CSS, Project, etc.
                 </p>
             </div>
         """, unsafe_allow_html=True)
