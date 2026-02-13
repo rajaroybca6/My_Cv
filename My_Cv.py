@@ -439,7 +439,7 @@ with st.sidebar:
     st.markdown("### 🎓 Current Study")
     st.markdown("""
         <div style="padding: 0.75rem; background: rgba(102, 126, 234, 0.12); border-radius: 12px; border-left: 3px solid var(--accent1); color: var(--text);">
-            <strong>M.S. in Artificial Intelligence and Machine Learning Engineer</strong><br>
+            <strong>Master of Science in Artificial Intelligence | Machine Learning Engineer</strong><br>
             INFOR ELEA Smart Business Academy<br>
             <small>Oct 2025 - Present</small>
         </div>
