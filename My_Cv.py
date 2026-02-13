@@ -486,6 +486,7 @@ st.markdown("""
             <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">Machine Learning</span>
             <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">Power BI</span>
             <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">PHP</span>
+            <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">LLM</span>
         </div>
     </div>
 """, unsafe_allow_html=True)
