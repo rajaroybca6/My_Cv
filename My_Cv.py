@@ -674,7 +674,7 @@ with tab3:
 
         st.markdown("""
             <div class="timeline-card">
-                <h4 style="margin: 0;" class="gradient-text">Professional Master's in AI (AI Specialist)</h4>
+                <h4 style="margin: 0;" class="gradient-text">Professional Master's in Artificial Intelligence and Machine Learning Engineer(AI Specialist)</h4>
                 <p style="margin: 0.75rem 0; font-weight: 700; color: var(--accent1);">INFOR ELEA Smart Business Academy</p>
                 <p style="color: var(--muted); font-size: 0.9rem;">📍 Torino, Italy | 🗓️ Oct 2025 - Present</p>
             </div>
