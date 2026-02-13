@@ -530,14 +530,14 @@ with tab1:
                 </p>
                 <div style="margin-bottom: 1.5rem;">
                     <a href="https://logisticmanagement.streamlit.app/" target="_blank" style="
-                        display: inline-block;
-                        background: white;
-                        color: #667eea;
-                        padding: 12px 24px;
-                        border-radius: 12px;
-                        text-decoration: none;
-                        font-weight: 700;
-                        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                     display: inline-block;
+                     background: #ffffff !important;
+                     color: #4e54c8 !important; /* Force a dark color */
+                     padding: 12px 24px;
+                     border-radius: 12px;
+                    text-decoration: none;
+                     font-weight: 700;
+                     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
                     ">
                         🚀 View Live Demo →
                     </a>
