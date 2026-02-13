@@ -745,7 +745,7 @@ with tab4:
                 and intelligent web applications, leading projects end-to-end from architecture to deployment.
             </p>
             <p style="color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-top: 1.5rem;">
-                Currently pursuing a <strong class="gradient-text">Professional Master's Program in Artificial Intelligence</strong>,
+                Currently pursuing a <strong class="gradient-text">Professional Master's Program in Artificial Intelligence and Machine Learning Engineer</strong>,
                 strengthening my expertise in machine learning, feature engineering, and applied AI systems.
             </p>
         </div>
