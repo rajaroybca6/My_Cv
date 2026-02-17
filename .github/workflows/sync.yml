@@ -14,13 +14,17 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Setup LFS
-        run: |
-          git lfs install
-          git lfs migrate import --include="*.pdf,*.png,*.jpg,*.jpeg" --everything
-          git lfs push --all origin
-
-      - name: Push to hub
+      - name: Push to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_SYNC }}
-        run: git push --force https://Raja3105:$HF_TOKEN@huggingface.co/spaces/Raja3105/raja-roy-portfolio main
+        run: |
+          cd /tmp
+          git clone https://Raja3105:$HF_TOKEN@huggingface.co/spaces/Raja3105/raja-roy-portfolio hf-space
+          cd hf-space
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          cp -r $GITHUB_WORKSPACE/* .
+          git lfs track "*.pdf" "*.png" "*.jpg" "*.jpeg"
+          git add .
+          git commit -m "Sync from GitHub" || echo "Nothing to commit"
+          git push
