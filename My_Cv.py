@@ -123,13 +123,10 @@ st.markdown(f"""
 #MainMenu {{visibility: hidden;}}
 footer {{visibility: hidden;}}
 
-/* Sidebar toggle - ALWAYS VISIBLE */
+/* Sidebar toggle safe */
 [data-testid="collapsedControl"],
 [data-testid="stSidebarCollapsedControl"] {{
   z-index: 9999 !important;
-  visibility: visible !important;
-  display: flex !important;
-  opacity: 1 !important;
   border-radius: 999px !important;
   background: rgba(255,255,255,0.92) !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
@@ -140,16 +137,6 @@ footer {{visibility: hidden;}}
   background: rgba(17,24,39,0.85) !important;\
 }\
 " if theme == "dark" else ""}
-
-/* Also ensure the expand arrow button is visible */
-button[kind="headerNoPadding"],
-[data-testid="stSidebarNavItems"],
-section[data-testid="stSidebar"] + div button {{
-  visibility: visible !important;
-  display: flex !important;
-  opacity: 1 !important;
-  z-index: 9999 !important;
-}}
 
 /* ---------------------------
    SIDEBAR WIDTH (NARROW)
@@ -546,7 +533,7 @@ with tab1:
                     <a href="https://logisticmanagement.streamlit.app/" target="_blank" style="
                      display: inline-block;
                      background: #ffffff !important;
-                     color: #4e54c8 !important;
+                     color: #4e54c8 !important; /* Force a dark color */
                      padding: 12px 24px;
                      border-radius: 12px;
                     text-decoration: none;
@@ -631,6 +618,7 @@ with tab2:
             "description": "Developed and maintained full-stack web applications, customized WordPress themes and plugins, built responsive websites using PHP, HTML, CSS, Bootstrap, and JavaScript. Collaborated with designers and clients to deliver high-quality digital solutions.",
             "skills": ["PHP", "WordPress", "JavaScript", "HTML/CSS", "Bootstrap"]
         },
+       
         {
             "company": "Global Digital Baba",
             "location": "Torino, Italy",
@@ -639,6 +627,7 @@ with tab2:
             "description": "Assisted customers with product selection, troubleshooting, and after-sales support while managing billing, merchandising, and stock control.",
             "skills": ["Customer Service", "Operations", "Inventory Management"]
         },
+
         {
             "company": "NETWAY INDIA PVT. LTD",
             "location": "New Delhi, India",
