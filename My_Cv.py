@@ -675,28 +675,7 @@ with tab1:
 
 
 
-    with col2:
-     st.markdown("""
-        <div class="project-card">
-            <h4 style="margin-bottom: 1rem;">🏔️ NEURALDJ Build By AI</h4>
-            <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem;">
-                AI has built a high-energy DJ Sound System  for Music Lover.
-            </p>
-            <div style="margin-bottom: 1.5rem;">
-                <a href="https://neuraldj.streamlit.app/" target="_blank" class="live-view-btn">
-                    🚀 Live View
-                </a>
-            </div>
-            <div>
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">Django</span>
-                <span class="skill-badge">Numpy</span>
-                <span class="skill-badge">JavaScript</span>
-            </div>
-        </div>
-    """, unsafe_allow_html=True)
-
-
+    
 
 with tab2:
     st.markdown("## Professional Experience")
