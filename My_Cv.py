@@ -619,6 +619,53 @@ with tab1:
             </div>
         """, unsafe_allow_html=True)
 
+    with col2:
+        st.markdown("""
+            <div class="project-card">
+                <h4 style="margin-bottom: 1rem;">🏔️ West Bengal Tourism Portal</h4>
+                <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem;">
+                    Informational tourism website featuring regional attractions, interactive maps,
+                    and booking capabilities. Optimized for performance and SEO.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <a href="https://neuraldj.streamlit.app/" target="_blank" class="live-view-btn">
+                        🚀 Live View
+                    </a>
+                </div>
+                <div>
+                    <span class="skill-badge">PHP</span>
+                    <span class="skill-badge">Bootstrap</span>
+                    <span class="skill-badge">MySQL</span>
+                    <span class="skill-badge">JavaScript</span>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+
+
+with col2:
+    st.markdown("""
+        <div class="project-card">
+            <h4 style="margin-bottom: 1rem;">🏔️ NEURALDJ Build By AI</h4>
+            <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem;">
+                Informational tourism website featuring regional attractions, interactive maps,
+                and booking capabilities. Optimized for performance and SEO.
+            </p>
+            <div style="margin-bottom: 1.5rem;">
+                <a href="https://neuraldj.streamlit.app/" target="_blank" class="live-view-btn">
+                    🚀 Live View
+                </a>
+            </div>
+            <div>
+                <span class="skill-badge">PHP</span>
+                <span class="skill-badge">Bootstrap</span>
+                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">JavaScript</span>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+
+
+
 with tab2:
     st.markdown("## Professional Experience")
 
