@@ -621,7 +621,7 @@ with tab1:
                         <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
                         <p style="line-height: 1.8;">
                             ✓ Built high performance AI Hybrid DJ models<br>
-                            ✓ Data preprocessing & cleaning<br>
+                            ✓ Background noise removal preprocessing & cleaning<br>
                             ✓ AI has built a high-energy music<br>
                             ✓ Model evaluation & tuning<br>
                             ✓ Business-ready insights
