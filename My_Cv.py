@@ -590,13 +590,10 @@ with tab1:
                         <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
                         <h3 style="margin-bottom: 1rem;">Fraud Detection & Supply Chain Analytics</h3>
                         <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
-                            Designed and implemented machine learning models to detect fraudulent transactions and predict
-                            on-time versus delayed shipments. Leveraged data preprocessing, feature engineering, and
-                            classification techniques (Random Forest, Logistic Regression, XGBoost) to support operational
-                            decision-making with 90%+ accuracy.
+                            Designed and implemented machine learning and AI DJ Machine System models  a high-energy system for Music Lover  .
                         </p>
                         <div style="margin-bottom: 1.5rem;">
-                            <a href="https://logisticmanagement.streamlit.app/" target="_blank" style="
+                            <a href="https://neuraldj.streamlit.app/" target="_blank" style="
                              display: inline-block;
                              background: #ffffff !important;
                              color: #4e54c8 !important;
@@ -623,9 +620,9 @@ with tab1:
                     <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
                         <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
                         <p style="line-height: 1.8;">
-                            ✓ Built classification models<br>
+                            ✓ Built high performance AI Hybrid DJ models<br>
                             ✓ Data preprocessing & cleaning<br>
-                            ✓ Feature engineering pipeline<br>
+                            ✓ AI has built a high-energy music<br>
                             ✓ Model evaluation & tuning<br>
                             ✓ Business-ready insights
                         </p>
@@ -675,7 +672,7 @@ with tab1:
 
 
 
-    
+
 
 with tab2:
     st.markdown("## Professional Experience")
