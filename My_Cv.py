@@ -579,6 +579,59 @@ with tab1:
             </div>
         """, unsafe_allow_html=True)
 
+        with tab1:
+            st.markdown("## Featured Projects")
+
+            colA, colB = st.columns([2, 1])
+
+            with colA:
+                st.markdown("""
+                    <div class="featured-project project-card">
+                        <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
+                        <h3 style="margin-bottom: 1rem;">Fraud Detection & Supply Chain Analytics</h3>
+                        <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
+                            Designed and implemented machine learning models to detect fraudulent transactions and predict
+                            on-time versus delayed shipments. Leveraged data preprocessing, feature engineering, and
+                            classification techniques (Random Forest, Logistic Regression, XGBoost) to support operational
+                            decision-making with 90%+ accuracy.
+                        </p>
+                        <div style="margin-bottom: 1.5rem;">
+                            <a href="https://logisticmanagement.streamlit.app/" target="_blank" style="
+                             display: inline-block;
+                             background: #ffffff !important;
+                             color: #4e54c8 !important;
+                             padding: 12px 24px;
+                             border-radius: 12px;
+                            text-decoration: none;
+                             font-weight: 700;
+                             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                            ">
+                                🚀 View Live Demo →
+                            </a>
+                        </div>
+                        <div>
+                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python</span>
+                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Scikit-learn</span>
+                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Pandas</span>
+                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Feature Engineering</span>
+                        </div>
+                    </div>
+                """, unsafe_allow_html=True)
+
+            with colB:
+                st.markdown("""
+                    <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
+                        <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
+                        <p style="line-height: 1.8;">
+                            ✓ Built classification models<br>
+                            ✓ Data preprocessing & cleaning<br>
+                            ✓ Feature engineering pipeline<br>
+                            ✓ Model evaluation & tuning<br>
+                            ✓ Business-ready insights
+                        </p>
+                    </div>
+                """, unsafe_allow_html=True)
+
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("## Web Development Projects")
 
@@ -627,8 +680,7 @@ with tab1:
         <div class="project-card">
             <h4 style="margin-bottom: 1rem;">🏔️ NEURALDJ Build By AI</h4>
             <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem;">
-                Informational tourism website featuring regional attractions, interactive maps,
-                and booking capabilities. Optimized for performance and SEO.
+                AI has built a high-energy DJ Sound System  for Music Lover.
             </p>
             <div style="margin-bottom: 1.5rem;">
                 <a href="https://neuraldj.streamlit.app/" target="_blank" class="live-view-btn">
@@ -636,9 +688,9 @@ with tab1:
                 </a>
             </div>
             <div>
-                <span class="skill-badge">PHP</span>
-                <span class="skill-badge">Bootstrap</span>
-                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Django</span>
+                <span class="skill-badge">Numpy</span>
                 <span class="skill-badge">JavaScript</span>
             </div>
         </div>
