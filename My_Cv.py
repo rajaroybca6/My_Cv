@@ -607,9 +607,9 @@ with tab1:
                             </a>
                         </div>
                         <div>
-                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python</span>
+                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python & Django</span>
                             <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Scikit-learn</span>
-                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Pandas</span>
+                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Pandas & Numpy & Xgboost</span>
                             <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Feature Engineering</span>
                         </div>
                     </div>
