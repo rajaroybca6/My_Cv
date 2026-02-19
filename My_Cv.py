@@ -588,9 +588,9 @@ with tab1:
                 st.markdown("""
                     <div class="featured-project project-card">
                         <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
-                        <h3 style="margin-bottom: 1rem;">Fraud Detection & Supply Chain Analytics</h3>
+                        <h3 style="margin-bottom: 1rem;">Design Hybrid AI DJ Music System</h3>
                         <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
-                            Designed and implemented machine learning and AI DJ Machine System models  a high-energy system for Music Lover  .
+                            Designed and implemented machine learning and AI DJ Machine System models  a high-energy system for Music Lover. User can use it as a DJ System and also made a hybrid system that user just upload any kind of music and it automatically convert into DJ Music and user can download the music.
                         </p>
                         <div style="margin-bottom: 1.5rem;">
                             <a href="https://neuraldj.streamlit.app/" target="_blank" style="
