@@ -628,6 +628,7 @@ with tab1:
                         </p>
                     </div>
                 """, unsafe_allow_html=True)
+                
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("## Web Development Projects")
