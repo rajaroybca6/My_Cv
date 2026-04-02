@@ -578,6 +578,7 @@ with tab1:
                 </p>
             </div>
         """, unsafe_allow_html=True)
+        
 
         with tab1:
             st.markdown("## Featured Projects")
@@ -628,6 +629,62 @@ with tab1:
                         </p>
                     </div>
                 """, unsafe_allow_html=True)
+    with tab1:
+    st.markdown("## Featured Projects")
+
+    colA, colB = st.columns([2, 1])
+
+    with colA:
+        st.markdown("""
+            <div class="featured-project project-card">
+                <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
+                <h3 style="margin-bottom: 1rem;">DeepWatch v1.0 — AI CCTV Control Room</h3>
+                <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
+                    DeepWatch is a full-stack AI security system that streams live camera feeds through a YOLOv8 object detection pipeline directly in the browser. It supports multi-camera switching, virtual boundary zones with breach detection, ByteTrack-style centroid person tracking with unique IDs, loitering time analysis, and real-time crowd density estimation. Events are persisted to SQLite, exportable as CSV or JSON, and critical detections — including weapons — trigger instant email alerts with annotated snapshots attached. The entire interface is rendered as a dark cyberpunk control room UI, built without any frontend framework, purely in Streamlit with custom CSS.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <a href="https://rajaroybca6-deepwatch-app-35pfsm.streamlit.app/" target="_blank" style="
+                     display: inline-block;
+                     background: #ffffff !important;
+                     color: #4e54c8 !important;
+                     padding: 12px 24px;
+                     border-radius: 12px;
+                    text-decoration: none;
+                     font-weight: 700;
+                     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                    ">
+                        🚀 View Live Demo →
+                    </a>
+                </div>
+                <div>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python & Real-time DSP</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Scikit-learn & PyAudio · PyAV</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Pandas & NumPy · SciPy</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">FFT · STFT · Chroma & Streamlit</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Generative AI & OpenCV</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">YOLOv8 & WebRTC</span>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+
+    with colB:
+        st.markdown("""
+            <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
+                <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
+                <p style="line-height: 1.8;">
+                    ✓Audio signal processing · DSP<br>
+                    ✓ BPM detection · beat sync<br>
+                    ✓ Real-time audio pipeline<br>
+                    ✓ AI transition engine<br>
+                    ✓ Stem separation · deep learning<br>
+                    ✓ Generative AI · arrangement<br>
+                    ✓ Behavioral Intelligence<br>
+                    ✓ Key detection · harmonic mixing
+                    
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("## Web Development Projects")
