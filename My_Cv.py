@@ -460,9 +460,6 @@ with st.sidebar:
 
     st.markdown("---")
 
-    # ---------------------------
-    # REAL CV DOWNLOAD (Put PDF in same folder)
-    # ---------------------------
     cv_filename = "Raja_Roy_CV.pdf"
     cv_bytes = get_file_bytes(cv_filename)
 
@@ -529,6 +526,7 @@ tab1, tab2, tab3, tab4 = st.tabs(["🚀 Projects", "💼 Experience", "🎓 Educ
 with tab1:
     st.markdown("## Featured Projects")
 
+    # --- Project 1: Fraud Detection ---
     colA, colB = st.columns([2, 1])
 
     with colA:
@@ -578,66 +576,63 @@ with tab1:
                 </p>
             </div>
         """, unsafe_allow_html=True)
-        
 
-        with tab1:
-            st.markdown("## Featured Projects")
+    st.markdown("<br>", unsafe_allow_html=True)
 
-            colA, colB = st.columns([2, 1])
+    # --- Project 2: AI DJ Remix Engine ---
+    colC, colD = st.columns([2, 1])
 
-            with colA:
-                st.markdown("""
-                    <div class="featured-project project-card">
-                        <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
-                        <h3 style="margin-bottom: 1rem;">Design & Development of a Hybrid AI DJ Music Remix Engine System</h3>
-                        <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
-                            Developed a high-energy system that bridges the gap between manual mixing and AI automation. Users can perform live with a real-time DJ interface or leverage a neural "AI-to-DJ" pipeline to automatically transform standard tracks into club-ready remixes. Designed for music lovers, the platform features intelligent audio processing for one-click DJ conversions and instant downloads.
-                        </p>
-                        <div style="margin-bottom: 1.5rem;">
-                            <a href="https://neuraldj.streamlit.app/" target="_blank" style="
-                             display: inline-block;
-                             background: #ffffff !important;
-                             color: #4e54c8 !important;
-                             padding: 12px 24px;
-                             border-radius: 12px;
-                            text-decoration: none;
-                             font-weight: 700;
-                             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-                            ">
-                                🚀 View Live Demo →
-                            </a>
-                        </div>
-                        <div>
-                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python & Django</span>
-                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Scikit-learn</span>
-                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Pandas & Numpy & Xgboost</span>
-                            <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Feature Engineering</span>
-                        </div>
-                    </div>
-                """, unsafe_allow_html=True)
+    with colC:
+        st.markdown("""
+            <div class="featured-project project-card">
+                <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
+                <h3 style="margin-bottom: 1rem;">Design & Development of a Hybrid AI DJ Music Remix Engine System</h3>
+                <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
+                    Developed a high-energy system that bridges the gap between manual mixing and AI automation. Users can perform live with a real-time DJ interface or leverage a neural "AI-to-DJ" pipeline to automatically transform standard tracks into club-ready remixes. Designed for music lovers, the platform features intelligent audio processing for one-click DJ conversions and instant downloads.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <a href="https://neuraldj.streamlit.app/" target="_blank" style="
+                     display: inline-block;
+                     background: #ffffff !important;
+                     color: #4e54c8 !important;
+                     padding: 12px 24px;
+                     border-radius: 12px;
+                    text-decoration: none;
+                     font-weight: 700;
+                     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                    ">
+                        🚀 View Live Demo →
+                    </a>
+                </div>
+                <div>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python & Django</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Scikit-learn</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Pandas & Numpy & Xgboost</span>
+                    <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Feature Engineering</span>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
 
-            with colB:
-                st.markdown("""
-                    <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
-                        <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
-                        <p style="line-height: 1.8;">
-                            ✓ Built high performance AI Hybrid DJ models<br>
-                            ✓ Background noise removal preprocessing & cleaning<br>
-                            ✓ AI has built a high-energy music<br>
-                            ✓ Model evaluation & tuning<br>
-                            ✓ Business-ready insights
-                        </p>
-                    </div>
-                """, unsafe_allow_html=True)
-<<<<<<< HEAD
-                
-=======
-    with tab1:
-    st.markdown("## Featured Projects")
+    with colD:
+        st.markdown("""
+            <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
+                <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
+                <p style="line-height: 1.8;">
+                    ✓ Built high performance AI Hybrid DJ models<br>
+                    ✓ Background noise removal preprocessing & cleaning<br>
+                    ✓ AI has built a high-energy music<br>
+                    ✓ Model evaluation & tuning<br>
+                    ✓ Business-ready insights
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
 
-    colA, colB = st.columns([2, 1])
+    st.markdown("<br>", unsafe_allow_html=True)
 
-    with colA:
+    # --- Project 3: DeepWatch ---
+    colE, colF = st.columns([2, 1])
+
+    with colE:
         st.markdown("""
             <div class="featured-project project-card">
                 <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
@@ -670,12 +665,12 @@ with tab1:
             </div>
         """, unsafe_allow_html=True)
 
-    with colB:
+    with colF:
         st.markdown("""
             <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
                 <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
                 <p style="line-height: 1.8;">
-                    ✓Audio signal processing · DSP<br>
+                    ✓ Audio signal processing · DSP<br>
                     ✓ BPM detection · beat sync<br>
                     ✓ Real-time audio pipeline<br>
                     ✓ AI transition engine<br>
@@ -683,12 +678,9 @@ with tab1:
                     ✓ Generative AI · arrangement<br>
                     ✓ Behavioral Intelligence<br>
                     ✓ Key detection · harmonic mixing
-                    
                 </p>
             </div>
         """, unsafe_allow_html=True)
-
->>>>>>> a0c8cb4cab3ba12911680b741dbbdea91f825f1c
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("## Web Development Projects")
@@ -729,10 +721,6 @@ with tab1:
                 </div>
             </div>
         """, unsafe_allow_html=True)
-
-
-
-
 
 
 with tab2:
@@ -840,7 +828,7 @@ with tab3:
         st.markdown("## 💻 Technical Skills")
 
         skills_data = {
-            "Data Science & AI": ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "Feature Engineering", "Deep Learning","LLM", "N8N"],
+            "Data Science & AI": ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "Feature Engineering", "Deep Learning", "LLM", "N8N"],
             "Data Analytics": ["SQL", "Power BI", "Excel (Advanced)", "Data Visualization", "Statistical Analysis"],
             "Web Development": ["PHP", "JavaScript", "HTML/CSS", "Bootstrap", "WordPress", "Django"],
             "Databases": ["MySQL", "SQL Server", "Database Design"],
@@ -934,4 +922,4 @@ st.markdown("""
         </p>
     </div>
 """, unsafe_allow_html=True)
-#streamlit run My_Cv.py
+# streamlit run My_Cv.py
