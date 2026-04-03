@@ -492,11 +492,19 @@ st.markdown("""
         </p>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
             <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">Python</span>
+            <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">GEN AI</span>
+            <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">MS.OFFICE</span>
+            <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">HTML</span>
+            <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">CSS & BOOTSTRAP</span>
             <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">SQL</span>
             <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">Machine Learning</span>
             <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">Power BI</span>
             <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">PHP</span>
             <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">LLM</span>
+            <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">JAVASCRIPT</span>
+            <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">WORDPRESS</span>
+            <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">POSTGRESQL</span>
+            <span style="background: rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 12px; font-weight: 600; backdrop-filter: blur(10px);">AWS</span>
         </div>
     </div>
 """, unsafe_allow_html=True)
