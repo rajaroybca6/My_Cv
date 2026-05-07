@@ -690,6 +690,214 @@ with tab1:
 
     st.markdown("<br>", unsafe_allow_html=True) ####
 
+    ###
+    # --- Project 2: AI DJ Remix Engine ---
+    colC, colD = st.columns([2, 1])
+
+    with colC:
+        st.markdown("""
+                <div class="featured-project project-card">
+                    <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
+                    <h3 style="margin-bottom: 1rem;">Design & Development of a Hybrid AI DJ Music Remix Engine System</h3>
+                    <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
+                        Developed a high-energy system that bridges the gap between manual mixing and AI automation. Users can perform live with a real-time DJ interface or leverage a neural "AI-to-DJ" pipeline to automatically transform standard tracks into club-ready remixes. Designed for music lovers, the platform features intelligent audio processing for one-click DJ conversions and instant downloads.
+                    </p>
+                    <div style="margin-bottom: 1.5rem;">
+                        <a href="https://neuraldj.streamlit.app/" target="_blank" style="
+                         display: inline-block;
+                         background: #ffffff !important;
+                         color: #4e54c8 !important;
+                         padding: 12px 24px;
+                         border-radius: 12px;
+                        text-decoration: none;
+                         font-weight: 700;
+                         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                        ">
+                            🚀 View Live Demo →
+                        </a>
+                    </div>
+                    <div>
+                        <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python & Django</span>
+                        <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Scikit-learn</span>
+                        <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Pandas & Numpy & Xgboost</span>
+                        <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Feature Engineering</span>
+                    </div>
+                </div>
+            """, unsafe_allow_html=True)
+
+    with colD:
+        st.markdown("""
+                <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
+                    <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
+                    <p style="line-height: 1.8;">
+                        ✓ Built high performance AI Hybrid DJ models<br>
+                        ✓ Background noise removal preprocessing & cleaning<br>
+                        ✓ AI has built a high-energy music<br>
+                        ✓ Model evaluation & tuning<br>
+                        ✓ Business-ready insights
+                    </p>
+                </div>
+            """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # --- Project 3: Real-Time License Plate Recognition System ---
+    colC, colD = st.columns([2, 1])
+
+    with colC:
+        st.markdown("""
+                   <div class="featured-project project-card">
+                       <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
+                       <h3 style="margin-bottom: 1rem;">Real-Time License Plate Recognition System</h3>
+                       <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
+                        A production-ready ANPR system that streams live camera feed in the browser and detects multiple license plates simultaneously in real time. It combines a custom contour-based plate finder with a pre-trained binary OCR model to extract and label plate text frame-by-frame. Each plate is highlighted with a uniquely coloured bounding box with text overlaid on-screen. Detections are logged to a deduplicated session history across the full session. Fully compatible with mobile networks (4G/5G) and Wi-Fi via ICE/TURN relay configuration. Supports front and rear camera switching for flexible deployment.
+                       </p>
+                       <div style="margin-bottom: 1.5rem;">
+                           <a href="https://rajaroybca6-car-licence-plate-detection-app-ticxbh.streamlit.app/" target="_blank" style="
+                            display: inline-block;
+                            background: #ffffff !important;
+                            color: #4e54c8 !important;
+                            padding: 12px 24px;
+                            border-radius: 12px;
+                           text-decoration: none;
+                            font-weight: 700;
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                           ">
+                               🚀 View Live Demo →
+                           </a>
+                       </div>
+                       <div>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python & Streamlit</span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">WebRTC (ICE/TURN)</span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Multi-camera support</span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">streamlit-webrtc & OpenCV</span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">PyAV & Custom PlateFinder </span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">TensorFlow (.pb model)</span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Binary OCR model</span>
+                       </div>
+                   </div>
+               """, unsafe_allow_html=True)
+
+    with colD:
+        st.markdown("""
+                   <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
+                       <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
+                       <p style="line-height: 1.8;">
+                           ✓ Computer vision · OpenCV<br>
+                           ✓ OCR · character recognition<br>
+                           ✓ WebRTC · live video streaming<br>
+                           ✓ Multi-network deployment<br>
+                           ✓ Performance optimisation
+                       </p>
+                   </div>
+               """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)  ####
+    ########
+    # --- Project 2: AI Audio to Text Remix Engine ---
+    colC, colD = st.columns([2, 1])
+
+    with colC:
+        st.markdown("""
+                <div class="featured-project project-card">
+                    <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
+                    <h3 style="margin-bottom: 1rem;">Design & Development of a Hybrid AI DJ Music Remix Engine System</h3>
+                    <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
+                        Developed a high-energy system that bridges the gap between manual mixing and AI automation. Users can perform live with a real-time DJ interface or leverage a neural "AI-to-DJ" pipeline to automatically transform standard tracks into club-ready remixes. Designed for music lovers, the platform features intelligent audio processing for one-click DJ conversions and instant downloads.
+                    </p>
+                    <div style="margin-bottom: 1.5rem;">
+                        <a href="https://audiototextversion2forwebapp-b46fnnuniiqzq2n9arpogz.streamlit.app/" target="_blank" style="
+                        
+                         display: inline-block;
+                         background: #ffffff !important;
+                         color: #4e54c8 !important;
+                         padding: 12px 24px;
+                         border-radius: 12px;
+                        text-decoration: none;
+                         font-weight: 700;
+                         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                        ">
+                            🚀 View Live Demo →
+                        </a>
+                    </div>
+                    <div>
+                        <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python & Django</span>
+                        <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Scikit-learn</span>
+                        <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Pandas & Numpy & Xgboost</span>
+                        <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Feature Engineering</span>
+                    </div>
+                </div>
+            """, unsafe_allow_html=True)
+
+    with colD:
+        st.markdown("""
+                <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
+                    <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
+                    <p style="line-height: 1.8;">
+                        ✓ Local-first, fully offline<br>
+                        ✓ int8 CPU quantization<br>
+                        ✓ 99+ language support<br>
+                        ✓ Transcript history log<br>
+                        ✓ Multi-format audio input
+                    </p>
+                </div>
+            """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # --- Project 3: Real-Time License Plate Recognition System ---
+    colC, colD = st.columns([2, 1])
+
+    with colC:
+        st.markdown("""
+                   <div class="featured-project project-card">
+                       <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
+                       <h3 style="margin-bottom: 1rem;">Real-Time License Plate Recognition System</h3>
+                       <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
+                        A production-ready ANPR system that streams live camera feed in the browser and detects multiple license plates simultaneously in real time. It combines a custom contour-based plate finder with a pre-trained binary OCR model to extract and label plate text frame-by-frame. Each plate is highlighted with a uniquely coloured bounding box with text overlaid on-screen. Detections are logged to a deduplicated session history across the full session. Fully compatible with mobile networks (4G/5G) and Wi-Fi via ICE/TURN relay configuration. Supports front and rear camera switching for flexible deployment.
+                       </p>
+                       <div style="margin-bottom: 1.5rem;">
+                           <a href="https://rajaroybca6-car-licence-plate-detection-app-ticxbh.streamlit.app/" target="_blank" style="
+                            display: inline-block;
+                            background: #ffffff !important;
+                            color: #4e54c8 !important;
+                            padding: 12px 24px;
+                            border-radius: 12px;
+                           text-decoration: none;
+                            font-weight: 700;
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                           ">
+                               🚀 View Live Demo →
+                           </a>
+                       </div>
+                       <div>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Python & Streamlit</span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">WebRTC (ICE/TURN)</span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Multi-camera support</span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">streamlit-webrtc & OpenCV</span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">PyAV & Custom PlateFinder </span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">TensorFlow (.pb model)</span>
+                           <span style="background: rgba(255,255,255,0.25); padding: 6px 14px; margin: 4px; border-radius: 12px; display: inline-block; font-size: 0.85rem; font-weight: 600;">Binary OCR model</span>
+                       </div>
+                   </div>
+               """, unsafe_allow_html=True)
+
+    with colD:
+        st.markdown("""
+                   <div class="glass-card" style="background: rgba(102, 126, 234, 0.95); color: white; height: 100%;">
+                       <h4 style="margin-top: 0;">🎯 Key Achievements</h4>
+                       <p style="line-height: 1.8;">
+                           ✓ Computer vision · OpenCV<br>
+                           ✓ OCR · character recognition<br>
+                           ✓ WebRTC · live video streaming<br>
+                           ✓ Multi-network deployment<br>
+                           ✓ Performance optimisation
+                       </p>
+                   </div>
+               """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)  ####
+
     # --- Project 4: DeepWatch ---
     colE, colF = st.columns([2, 1])
 
