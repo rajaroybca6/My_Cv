@@ -801,9 +801,9 @@ with tab1:
         st.markdown("""
                 <div class="featured-project project-card">
                     <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 0.5rem; opacity: 0.9;">🏆 FEATURED ML PROJECT</p>
-                    <h3 style="margin-bottom: 1rem;">Design & Development of a Hybrid AI DJ Music Remix Engine System</h3>
+                    <h3 style="margin-bottom: 1rem;">Audio to Text Converter</h3>
                     <p style="margin-bottom: 2rem; line-height: 1.7; opacity: 0.95;">
-                        Developed a high-energy system that bridges the gap between manual mixing and AI automation. Users can perform live with a real-time DJ interface or leverage a neural "AI-to-DJ" pipeline to automatically transform standard tracks into club-ready remixes. Designed for music lovers, the platform features intelligent audio processing for one-click DJ conversions and instant downloads.
+                        Built a local-first transcription app powered by faster-whisper. Processes 4-hour audio files with int8 quantization — 3–4× faster than OpenAI Whisper on CPU. Supports 99+ languages, runs fully offline, and stores transcript history per session.
                     </p>
                     <div style="margin-bottom: 1.5rem;">
                         <a href="https://audiototextversion2forwebapp-b46fnnuniiqzq2n9arpogz.streamlit.app/" target="_blank" style="
